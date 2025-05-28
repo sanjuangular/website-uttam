@@ -5,42 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Services - Service Company</title>
   <link rel="stylesheet" href="styles.css" />
-  <!-- AOS CSS -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    .service-description {
+      margin-top: 2em;
+      text-align: center;
+      font-size: 1.2em;
+      color: #333;
+      min-height: 50px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    h2 {
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Our Services</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
+      href="services.html">Services</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
+
   <main>
     <h2>What We Offer</h2>
-    <ul>
-      <li><strong>Plumbing:</strong> Reliable plumbing solutions for homes and businesses.</li>
-      <li><strong>Painting:</strong> Interior and exterior painting with a professional finish.</li>
-      <li><strong>Masonry:</strong> Quality brickwork, stonework, and concrete services.</li>
-      <li><strong>Hardware:</strong> Supply and installation of essential hardware fittings.</li>
-      <li><strong>Interior Work:</strong> Beautiful and functional interior design and execution.</li>
-    </ul>
+
     <div class="service-images">
-      <img src="https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg" alt="Painting">
-      <img src="https://images.pexels.com/photos/5691535/pexels-photo-5691535.jpeg" alt="Masonry">
-      <img src="https://images.pexels.com/photos/175039/pexels-photo-175039.jpeg" alt="Hardware">
-      <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg" alt="Interior Work">
+      <img src="https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg" alt="Plumbing" onclick="showDescription('Plumbing')">
+      <img src="https://images.pexels.com/photos/5691535/pexels-photo-5691535.jpeg" alt="Painting" onclick="showDescription('Painting')">
+     /photos/175039/pexels-photo-175039.jpeg" alt="Masonry" onclick="showDescription('Masonry')">
+      <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg" alt="Hardware" onclick="showDescription('Hardware')">
+      <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg" alt="Interior Work" onclick="showDescription('Interior Work')">
     </div>
+
+    <div class="service-description" id="description"></div>
   </main>
+
   <footer>
     <p>&copy; 2025 Service Company</p>
   </footer>
-  <!-- AOS JS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
+
+  <script>
+    const descriptions = {
+      "Plumbing": "Reliable plumbing solutions for homes and businesses.",
+      "Painting": "Interior and exterior painting with a professional finish.",
+      "Masonry": "Quality brickwork, stonework, and concrete services.",
+      "Hardware": "Supply and installation of essential hardware fittings.",
+      "Interior Work": "Beautiful and functional interior design and execution."
+    };
+
+    function showDescription(service) {
+      const desc = document.getElementById('description');
+      desc.textContent = descriptions[service];
+    }
+  </script>
 </body>
 </html>
