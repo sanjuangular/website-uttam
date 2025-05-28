@@ -47,3 +47,31 @@ footer {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+main > section, main > h2, main > ul {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Hover effect for nav links */
+nav a:hover {
+  text-decoration: underline;
+  color: #ffd700;
+  transition: color 0.3s ease;
+}
+
+/* Image hover effect */
+.service-images img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
